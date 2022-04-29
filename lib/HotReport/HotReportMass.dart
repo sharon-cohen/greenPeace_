@@ -28,7 +28,7 @@ class HotMass extends StatelessWidget {
         alignment: FractionalOffset.bottomRight,
       );
     } else {
-      return FlatButton(
+      return TextButton(
         onPressed: (){
           showAlertDialogImage(context, report.image);
         },
@@ -171,7 +171,7 @@ class HotMass extends StatelessWidget {
 
                               children: [
                                 Expanded(
-                                  child: FlatButton(
+                                  child: TextButton(
                                     onPressed: (){
                                       launchMap(report.location);
                                     },
@@ -221,7 +221,7 @@ class HotMass extends StatelessWidget {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            FlatButton(
+                            TextButton(
                               child: Column(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceEvenly,
@@ -234,7 +234,7 @@ class HotMass extends StatelessWidget {
                                       height: 30,
                                     ),
                                   ),
-                                  Text('השב ',
+                                  Text('השיבו ',
                                       style: TextStyle(
                                         fontSize: 20,
                                         color: Colors.white,
@@ -265,7 +265,7 @@ class HotMass extends StatelessWidget {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            FlatButton(
+                            TextButton(
                               child: Column(
                                 children: [
                                   Image.asset(
@@ -274,7 +274,7 @@ class HotMass extends StatelessWidget {
                                     width: 30,
                                     height: 30,
                                   ),
-                                  Text('מחק',
+                                  Text('מחקו',
                                       style: TextStyle(
                                         fontFamily: 'Assistant',
                                         fontSize: 20,
@@ -285,7 +285,8 @@ class HotMass extends StatelessWidget {
 
                               onPressed: () {
                                 showDialog(
-                                    child: new Dialog(
+                                  context: context,
+                                  builder: (_) => new Dialog(
                                       child: Container(
                                         width: 100,
                                         height: 100,
@@ -322,8 +323,8 @@ class HotMass extends StatelessWidget {
                                             Row(
                                               children: [
                                                 Spacer(),
-                                                new FlatButton(
-                                                  child: new Text("מחק",
+                                                new TextButton(
+                                                  child: new Text("מחקו",
                                                       style: TextStyle(
                                                         fontFamily: 'Assistant',
                                                         fontSize: 20,
@@ -342,7 +343,7 @@ class HotMass extends StatelessWidget {
                                                     Navigator.pop(context);
                                                   },
                                                 ),
-                                                new FlatButton(
+                                                new TextButton(
                                                   child: new Text("בטל",
                                                       style: TextStyle(
                                                         fontFamily: 'Assistant',
@@ -360,7 +361,7 @@ class HotMass extends StatelessWidget {
                                         ),
                                       ),
                                     ),
-                                    context: context);
+                                    );
                               },
 
                               // onPressed: () async {

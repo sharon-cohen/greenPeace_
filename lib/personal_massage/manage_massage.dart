@@ -64,7 +64,7 @@ class AllmessState extends State<Allmess> {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: new Text(
-                  "דיווחים סביבתיים",
+                  "תיעודים סביבתיים",
                   style: new TextStyle(
                       fontFamily: 'Assistant',
                       fontWeight: FontWeight.bold,
@@ -356,8 +356,7 @@ class ReportsContainer extends StatelessWidget {
               ),
             ),
           ),
-          title:FlatButton (
-            padding: EdgeInsets.all(0),
+          title:TextButton (
             onPressed: () {
               Navigator.push(
                   context,
@@ -383,8 +382,7 @@ class ReportsContainer extends StatelessWidget {
             sizeHeight: MediaQuery.of(context).size.height / 35,
             sizeWidth: MediaQuery.of(context).size.width,
           ),
-          trailing: FlatButton(
-            padding: const EdgeInsets.all(0.0),
+          trailing: TextButton(
             child: Container(
                 width: 1,
                 child: Icon(Icons.keyboard_arrow_left,
@@ -485,8 +483,7 @@ class eventContainer extends StatelessWidget {
                 color: Colors.black,
               ),
             ),
-            title: FlatButton(
-              padding: EdgeInsets.all(0),
+            title: TextButton(
               onPressed: () {
                 Navigator.push(
                     context,
@@ -512,8 +509,7 @@ class eventContainer extends StatelessWidget {
               sizeHeight: MediaQuery.of(context).size.height / 35,
               sizeWidth: MediaQuery.of(context).size.width,
             ),
-            trailing: FlatButton(
-              padding: const EdgeInsets.all(0.0),
+            trailing: TextButton(
               child: Container(
                 width: 1,
                 child: Icon(Icons.keyboard_arrow_left,
@@ -537,7 +533,7 @@ class eventContainer extends StatelessWidget {
 
 showAlertDialogMessManeger(BuildContext context) {
   // set up the buttons
-  Widget cancelButton = FlatButton(
+  Widget cancelButton = TextButton(
     child: Text(
       "לכולם",
       style: TextStyle(
@@ -550,7 +546,7 @@ showAlertDialogMessManeger(BuildContext context) {
           MaterialPageRoute(builder: (context) => SendMessForAllUser()));
     },
   );
-  Widget continueButton = FlatButton(
+  Widget continueButton = TextButton(
     child: Text(
       "למשתמש מסוים",
       style: TextStyle(

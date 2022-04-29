@@ -242,7 +242,7 @@ class updatestrugleState extends State<updatestrugle> {
                   borderRadius: BorderRadius.circular(30.0),
                   child: _imageFile != null
                       ? Image.file(_imageFile)
-                      : FlatButton(
+                      : TextButton(
                           child: Icon(
                             Icons.add_a_photo,
                             size: 50,
@@ -329,7 +329,7 @@ class updatestrugleState extends State<updatestrugle> {
                           children: [
                             Spacer(),
                             Text(
-                              'שמור שינויים',
+                              'שמירת שינויים',
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
@@ -370,7 +370,7 @@ class Data {
 
 showAlertDialogStruggle(BuildContext context, String Mess) {
   // set up the button
-  Widget okButton = FlatButton(
+  Widget okButton = TextButton(
     child: Text(
       "אישור",
       style: TextStyle(color: Colors.black, fontFamily: 'Assistant'),

@@ -263,8 +263,7 @@ class _TtuggleContainerState extends State<TtuggleContainer> {
           ):Expanded(child: Container()),
           new Expanded(
               flex: 4,
-              child: FlatButton(
-                padding: EdgeInsets.all(0),
+              child: TextButton(
                 onPressed: () {
                   Navigator.push(
                       context,

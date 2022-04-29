@@ -188,7 +188,7 @@ class _newEventPage extends State<newEventPage> {
                 padding: EdgeInsets.fromLTRB(
                     5, MediaQuery.of(context).size.height / 15, 5, 0),
                 child: Align(
-                  child: FlatButton(
+                  child: TextButton(
                     child: Row(
                       children: [
                         Image.asset(
@@ -265,7 +265,7 @@ class _newEventPage extends State<newEventPage> {
                   maxLines: 5,
                   style: style,
                   decoration: InputDecoration(
-                    labelText: "צרף קישור לקבוצת Whatsapp",
+                    labelText: "צרפו קישור לקבוצת Whatsapp",
                     labelStyle: TextStyle(
                       fontFamily: 'Assistant',
                       color: Colors.black,
@@ -433,7 +433,7 @@ class _newEventPage extends State<newEventPage> {
                             } else {
                               if (checkExistNameEvent == true) {
                                 AlertDialogCreateEvent(context,
-                                    "שם אירוע זה כבר קיים במערכת, אנא בחר בשם אחר");
+                                    "שם אירוע זה כבר קיים במערכת, אנא בחרו בשם אחר");
                               } else {
                                 AlertDialogCreateEvent(
                                     context, "חובה למלא את כל השדות");
@@ -445,7 +445,7 @@ class _newEventPage extends State<newEventPage> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                "צור אירוע",
+                                "יצירת אירוע",
                                 style: style.copyWith(
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold),
@@ -491,7 +491,7 @@ class Data {
 
 AlertDialogCreateEvent(BuildContext context, String Mess) {
   // set up the button
-  Widget okButton = FlatButton(
+  Widget okButton = TextButton(
     child: Text("אישור"),
     onPressed: () {
       Navigator.pop(context, true);
@@ -520,7 +520,7 @@ AlertDialogCreateEvent(BuildContext context, String Mess) {
 }
 AlertDialogDateIsNow(BuildContext context) {
   // set up the button
-  Widget okButton = FlatButton(
+  Widget okButton = TextButton(
     child: Text("אישור"),
     onPressed: () => Navigator.pop(context),
   );

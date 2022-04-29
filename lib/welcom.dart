@@ -84,7 +84,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
         setState(() {
           button_in.add(
             RoundedButton(
-              title: 'התחבר',
+              title: 'התחברו',
               colour: Colors.white,
               onPressed: () {
                 globals.no_reg = false;
@@ -106,7 +106,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
           );
           button_in.add(
             RoundedButton(
-                title: 'היכנס מבלי להירשם',
+                title: 'הכנסו מבלי להירשם',
                 colour: Colors.white,
                 onPressed: () {
                   globals.no_reg = true;
@@ -136,7 +136,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
 
     button_in.add(
       RoundedButton(
-        title: 'התחבר',
+        title: 'התחברו',
         colour: Colors.white,
         onPressed: () {
           globals.no_reg = false;
@@ -147,7 +147,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
     );
     button_in.add(
       RoundedButton(
-          title: 'הרשם',
+          title: 'הרשמו',
           colour: Colors.white,
           onPressed: () {
             Navigator.pushNamed(context, RegistrationScreen.id);
@@ -155,7 +155,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
     );
     button_in.add(
       RoundedButton(
-          title: 'היכנס מבלי להירשם',
+          title: 'הכנסו מבלי להירשם',
           colour: Colors.white,
           onPressed: () {
             globals.no_reg = true;

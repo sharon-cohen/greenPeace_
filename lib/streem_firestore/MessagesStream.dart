@@ -122,8 +122,7 @@ class MessageBubble extends StatelessWidget {
         ),
       );
     } else
-      return FlatButton(
-        padding: EdgeInsets.all(0),
+      return TextButton(
         //todo add onpress
         onPressed: () {
           showAlertDialogImage(context, image_u);
@@ -243,14 +242,15 @@ class MessageBubble extends StatelessWidget {
 
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
-     Container(
+
+            globals.isMeneger? Container(
               margin: const EdgeInsets.only(top:20),
               child: GestureDetector(
                 onTap: () => DialogUtils.showCustomDialog(
                   context,
-                  title: "דיווח למנהלים",
-                  okBtnText: "דווח",
-                  cancelBtnText: "בטל",
+                  title: "מחיקת הודעה",
+                  okBtnText: "מחיקה",
+                  cancelBtnText: "ביטול",
                   text: text,
                   sender: sender,
                   image_u: image_u,
@@ -274,7 +274,38 @@ class MessageBubble extends StatelessWidget {
 
                 )
               ),
-            ) ,
+            ) :Container(
+              margin: const EdgeInsets.only(top:20),
+              child: GestureDetector(
+                  onTap: () => DialogUtils.showCustomDialog(
+                    context,
+                    title: "דיווח למנהלים",
+                    okBtnText: "דיווח",
+                    cancelBtnText: "ביטול",
+                    text: text,
+                    sender: sender,
+                    image_u: image_u,
+                    flage_report: report,
+                  ),
+                  child: !isMe && !globals.no_reg
+                      ? Container(
+                      height: 20,
+                      width: 20,
+
+                      decoration: new BoxDecoration(
+
+                          image: new DecorationImage(
+                            image: new AssetImage('image/3dots.png'),
+                            fit: BoxFit.fill,
+                          ))
+                  )
+                      : Container(
+                    height: 15,
+                    width: 15,
+
+                  )
+              ),
+            ),
 
             nassege(context),
           ],

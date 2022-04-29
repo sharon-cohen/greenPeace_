@@ -71,7 +71,7 @@ class _FeedState extends State<Feed> {
                   ),
                 ),
                 Text(
-                  'כאן ניתן לשתף את האהבה והדאגה שלנו לסביבה',
+                  'מתכתבים ומתעדכנים עם מתנדבי גרינפיס מכל הארץ',
                   style: TextStyle(
                     fontFamily: 'Assistant',
                   ),

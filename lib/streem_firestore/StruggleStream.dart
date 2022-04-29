@@ -156,8 +156,8 @@ class _TtuggleContainerState extends State<TtuggleContainer> {
         children: <Widget>[
           new Expanded(
               flex: 4,
-              child: FlatButton(
-                padding: EdgeInsets.all(0),
+              child: TextButton(
+
                 onPressed: () {
                   Navigator.push(
                       context,
@@ -207,7 +207,7 @@ class All_TtuggleContainer extends StatelessWidget {
   final _foldingCellKey = GlobalKey<SimpleFoldingCellState>();
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
+    return TextButton(
       onPressed: () {
         Navigator.push(
             context,
@@ -264,14 +264,14 @@ class All_TtuggleContainer extends StatelessWidget {
   Container InnerBottomWidget() {
     return Container(
       color: Colors.green.shade100,
-      child: FlatButton(
+      child: TextButton(
         onPressed: () => _foldingCellKey?.currentState?.toggleFold(),
         child: Text(
           "Close",
         ),
-        textColor: Colors.white,
-        color: Colors.green.shade100,
-        splashColor: Colors.white.withOpacity(0.5),
+        // textColor: Colors.white,
+        // color: Colors.green.shade100,
+        // splashColor: Colors.white.withOpacity(0.5),
       ),
     );
   }
@@ -314,15 +314,15 @@ class All_TtuggleContainer extends StatelessWidget {
                             fontSize: 20.0,
                             fontWeight: FontWeight.w800)),
                     Align(
-                      child: FlatButton(
+                      child: TextButton(
                         onPressed: () =>
                             _foldingCellKey?.currentState?.toggleFold(),
                         child: Text(
                           "Open",
                         ),
-                        textColor: Colors.white,
-                        color: Colors.indigoAccent,
-                        splashColor: Colors.white.withOpacity(0.5),
+                        // textColor: Colors.white,
+                        // color: Colors.indigoAccent,
+                        // splashColor: Colors.white.withOpacity(0.5),
                       ),
                     ),
                   ],

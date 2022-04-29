@@ -122,7 +122,7 @@ class _HotReport extends State<HotReport> {
 //                    ),
                     SizedBox(width: 60),
                     new Text(
-                      "דיווח סביבתי",
+                      "שליחת תיעוד לגרינפיס",
                       style: new TextStyle(
                           fontFamily: 'Assistant',
                           fontSize: 35,
@@ -164,7 +164,7 @@ class _HotReport extends State<HotReport> {
                 padding: EdgeInsets.fromLTRB(
                     5, MediaQuery.of(context).size.height / 15, 5, 0),
                 child: Align(
-                  child: FlatButton(
+                  child: TextButton(
                     child: Row(
                       children: [
                         Image.asset(
@@ -240,8 +240,7 @@ class _HotReport extends State<HotReport> {
                 child: Container(
                   child: _imageFile != null
                       ? Image.file(_imageFile)
-                      : FlatButton(
-                          padding: EdgeInsets.fromLTRB(0, 30, 0, 0),
+                      : TextButton(
                           child: Row(
                             children: [
                               Image.asset(
@@ -306,7 +305,7 @@ class _HotReport extends State<HotReport> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                "שלח דיווח",
+                                "שליחה",
                                 style: style.copyWith(
                                     fontFamily: 'Assistant',
                                     color: Colors.white,
@@ -320,12 +319,7 @@ class _HotReport extends State<HotReport> {
                               ),
                             ],
                           ),
-                          // child: Text(
-                          //   "שלח",
-                          //   style: style.copyWith(
-                          //       color: Colors.white,
-                          //       fontWeight: FontWeight.bold),
-                          // ),
+
                         ),
                       ),
                     ),
@@ -372,7 +366,7 @@ class Data {
 
 successshowAlertDialog(BuildContext context) {
   // set up the button
-  Widget okButton = FlatButton(
+  Widget okButton = TextButton(
     child: Text(
       "אישור",
       style: TextStyle(color: Colors.black, fontFamily: 'Assistant'),
@@ -391,7 +385,7 @@ successshowAlertDialog(BuildContext context) {
   // set up the AlertDialog
   AlertDialog alert = AlertDialog(
     title: Text(
-      "דיווח נשלח למנהלים",
+      "תיעוד נשלח למנהלים",
       style: TextStyle(color: Colors.black, fontFamily: 'Assistant'),
     ),
     content: Text(

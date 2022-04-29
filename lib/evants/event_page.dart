@@ -166,7 +166,7 @@ class B extends StatelessWidget {
                                 shape: BoxShape.circle,
                                 color: Color(0xffF3F3FE),
                               ),
-                              child: FlatButton(
+                              child: TextButton(
                                 onPressed: (){
                                   launchMap(event.location);
                                 },
@@ -203,7 +203,7 @@ class B extends StatelessWidget {
                                 shape: BoxShape.circle,
                                 color: Color(0xffEEFBFA),
                               ),
-                              child: FlatButton(
+                              child: TextButton(
                                 onPressed: (){
                                   _launchURL(event.whatapp);
                                 },
@@ -308,8 +308,8 @@ _launchURL(String url) async {
 
 ToBeSureDeleteAlertDialogEvent(BuildContext context, String eventTitle) {
   // set up the button
-  Widget okButton = FlatButton(
-    child: Text("מחק",
+  Widget okButton = TextButton(
+    child: Text("מחקו",
         style: TextStyle(
           fontFamily: 'Assistant',
         )),
@@ -322,7 +322,7 @@ ToBeSureDeleteAlertDialogEvent(BuildContext context, String eventTitle) {
       );
     },
   );
-  Widget Later = FlatButton(
+  Widget Later = TextButton(
     child: Text("בטל",
         style: TextStyle(
           fontFamily: 'Assistant',

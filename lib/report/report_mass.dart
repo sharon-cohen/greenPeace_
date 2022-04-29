@@ -6,6 +6,7 @@ import 'package:greenpeace/report/report_model.dart';
 import 'package:greenpeace/GetID_DB/getid.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:greenpeace/globalfunc.dart';
+
 final _firestore = Firestore.instance;
 
 class reportMass extends StatelessWidget {
@@ -25,20 +26,18 @@ class reportMass extends StatelessWidget {
         alignment: FractionalOffset.topRight,
       );
     } else {
-
-      return FlatButton(
-        onPressed: (){
+      return TextButton(
+        onPressed: () {
           showAlertDialogImage(context, report.image);
         },
-
         child: Container(
-      child: CachedNetworkImage(
-      imageUrl: report.image,
-        progressIndicatorBuilder: (context, url, downloadProgress) =>
-            CircularProgressIndicator(value: downloadProgress.progress),
-        errorWidget: (context, url, error) => Icon(Icons.error),
-      ),
-    ),
+          child: CachedNetworkImage(
+            imageUrl: report.image,
+            progressIndicatorBuilder: (context, url, downloadProgress) =>
+                CircularProgressIndicator(value: downloadProgress.progress),
+            errorWidget: (context, url, error) => Icon(Icons.error),
+          ),
+        ),
       );
     }
   }
@@ -133,7 +132,7 @@ class reportMass extends StatelessWidget {
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
                                   fontFamily: 'Assistant',
-                                )),
+                                )), 
                             new Text(" דיווח",
                                 style: new TextStyle(
                                   fontSize: 20,
@@ -184,10 +183,10 @@ class reportMass extends StatelessWidget {
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  FlatButton(
+                                  TextButton(
                                     onPressed: () {
                                       showDialog(
-                                          child: new Dialog(
+                                          builder: (_) =>  new Dialog(
                                             child: Container(
                                               width: 100,
                                               height: 100,
@@ -217,7 +216,7 @@ class reportMass extends StatelessWidget {
                                                   Row(
                                                     children: [
                                                       Spacer(),
-                                                      new FlatButton(
+                                                      new TextButton(
                                                         child: new Text("הסר",
                                                             style: TextStyle(
                                                               fontFamily:
@@ -284,7 +283,7 @@ class reportMass extends StatelessWidget {
                                                           }
                                                         },
                                                       ),
-                                                      new FlatButton(
+                                                      new TextButton(
                                                         child: new Text("בטל",
                                                             style: TextStyle(
                                                               fontFamily:
@@ -342,7 +341,7 @@ class reportMass extends StatelessWidget {
                                       ],
                                     ),
                                     // color: Colors.blue,
-                                    textColor: Colors.white,
+                                    // textColor: Colors.white,
                                   ),
                                 ],
                               ),
@@ -359,7 +358,7 @@ class reportMass extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.center,
 
                                 children: [
-                                  FlatButton(
+                                  TextButton(
                                     child: Column(
                                       children: [
                                         Image.asset(
@@ -378,7 +377,7 @@ class reportMass extends StatelessWidget {
                                     ),
                                     onPressed: () {
                                       showDialog(
-                                          child: new Dialog(
+                                          builder: (_) =>  new Dialog(
                                             child: Container(
                                               width: 100,
                                               height: 100,
@@ -414,7 +413,7 @@ class reportMass extends StatelessWidget {
                                                   Row(
                                                     children: [
                                                       Spacer(),
-                                                      new FlatButton(
+                                                      new TextButton(
                                                         child: new Text("התעלם",
                                                             style: TextStyle(
                                                               fontFamily:
@@ -459,7 +458,7 @@ class reportMass extends StatelessWidget {
                                                           }
                                                         },
                                                       ),
-                                                      new FlatButton(
+                                                      new TextButton(
                                                         child: new Text("בטל",
                                                             style: TextStyle(
                                                               fontFamily:

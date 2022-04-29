@@ -158,7 +158,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         context, "המשתמש חסום במערכת");}
                   }),
               RoundedButton(
-                title: 'הכנס',
+                title: 'כניסה',
                 colour: Color(int.parse("0xff6ed000")),
                 onPressed: () async {
                   setState(() {
@@ -226,8 +226,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           builder: (context) => ForgetPassword()));
                 },
               ),
-              FlatButton(
-                child: Text('חזור לתפריט הראשי',
+              TextButton(
+                child: Text('חזרו לתפריט הראשי',
                     style: TextStyle(
                       decoration: TextDecoration.underline,
                     )),
@@ -249,14 +249,14 @@ class _LoginScreenState extends State<LoginScreen> {
 
 showAlertDialog_error_login(BuildContext context, String mass) {
   // set up the button
-  Widget cancelButton = FlatButton(
-    child: Text("הירשם",
+  Widget cancelButton = TextButton(
+    child: Text("הירשמו",
         style: TextStyle(color: Colors.black, fontFamily: 'Assistant')),
     onPressed: () {
       Navigator.pushNamed(context, RegistrationScreen.id);
     },
   );
-  Widget continueButton = FlatButton(
+  Widget continueButton = TextButton(
     child: Text("ביטול",
         style: TextStyle(color: Colors.black, fontFamily: 'Assistant')),
     onPressed: () {
@@ -348,7 +348,7 @@ const kSendButtonTextStyle = TextStyle(
 
 const kMessageTextFieldDecoration = InputDecoration(
   contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-  hintText: 'הקלד הודעה',
+  hintText: 'הקלדֿ/י הודעה',
   //todo check if good
   border: InputBorder.none,
   enabledBorder: OutlineInputBorder(

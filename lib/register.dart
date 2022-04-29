@@ -123,7 +123,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 height: 24.0,
               ),
               RaisedButton(
-                child: Text("הרשם עם גוגל"),
+                child: Text("הרשמו עם גוגל"),
                 onPressed: () async {
                   res = await signInWithGoogle();
 
@@ -202,7 +202,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                           showSpinner = false;
                         });
                         errorMailhowAlertDialog(
-                            context, "שם משתמש זה כבר קיים במערכת ");
+                            context, "שם משתמש/ מייל זה כבר קיים במערכת ");
                       }
                     } catch (e) {
 //                    setState(() {
@@ -249,7 +249,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 },
               ),
               RoundedButton(
-                title: 'הירשם',
+                title: 'הירשמו',
                 colour: Color(int.parse("0xff6ed000")),
                 onPressed: () async {
                   setState(() {
@@ -326,8 +326,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                         showSpinner = false;
                       });
                       errorMailhowAlertDialog(
-                          context, "שם משתמש זה כבר קיים במערכת ");
-                    }
+                          context, "שם משתמש/ מייל זה כבר קיים במערכת ");                    }
                   } catch (e) {
 
                     String  error;
@@ -369,8 +368,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   }
                 },
               ),
-              FlatButton(
-                child: Text('חזור לתפריט הראשי',
+              TextButton(
+                child: Text('חזרו לתפריט הראשי',
                     style: TextStyle(
                       decoration: TextDecoration.underline,
                     )),
@@ -468,7 +467,7 @@ Future<bool> doesNameAlreadyExist(String email) async {
 
 showAlertDialogRegisterName(BuildContext context) {
   // set up the button
-  Widget okButton = FlatButton(
+  Widget okButton = TextButton(
     child: Text("אישור",
         style: new TextStyle(
           fontFamily: 'Assistant',
@@ -480,7 +479,7 @@ showAlertDialogRegisterName(BuildContext context) {
 
   // set up the AlertDialog
   AlertDialog alert = AlertDialog(
-    title: Text("שם משתמש זה קיים אנא בחר בשם אחר",
+    title: Text("שם משתמש זה קיים אנא בחרו בשם אחר",
         style: new TextStyle(
           fontFamily: 'Assistant',
         )),
@@ -500,8 +499,8 @@ showAlertDialogRegisterName(BuildContext context) {
 
 errorMailhowAlertDialog(BuildContext context, String error) {
   // set up the button
-  Widget okButton = FlatButton(
-    child: Text("חזור",
+  Widget okButton = TextButton(
+    child: Text("חזרו",
         style: new TextStyle(
           fontFamily: 'Assistant',
         )),

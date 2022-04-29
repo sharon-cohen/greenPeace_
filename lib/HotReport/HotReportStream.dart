@@ -90,7 +90,7 @@ class HotContainer extends StatelessWidget {
               ),
             ),
           ),
-          title: FlatButton(
+          title: TextButton(
             onPressed: () {
               Navigator.push(
                   context,
@@ -99,7 +99,6 @@ class HotContainer extends StatelessWidget {
                         report: report,
                       )));
             },
-            padding: EdgeInsets.all(0),
             child: TextStyleMess(
               text: report.sender,
               size: 20,
@@ -117,8 +116,7 @@ class HotContainer extends StatelessWidget {
             sizeHeight: MediaQuery.of(context).size.height / 35,
             sizeWidth: MediaQuery.of(context).size.width,
           ),
-          trailing: FlatButton(
-            padding: const EdgeInsets.all(0.0),
+          trailing: TextButton(
             child: Container(
                 width: 1,
                 child: Icon(Icons.keyboard_arrow_left,

@@ -77,7 +77,7 @@ class _BottomNavigationBarControllerState
           });
         },
         items: !globals.no_reg
-            ? const <BottomNavigationBarItem>[
+            ?  <BottomNavigationBarItem>[
                 BottomNavigationBarItem(
 
             // ignore: deprecated_member_use
@@ -132,7 +132,11 @@ class _BottomNavigationBarControllerState
                     // color: Color(int.parse("0xff6ed000")),
                     // color: Colors.black,
                   ),
-                  title: Text('צור קשר',
+                  title: globals.isMeneger?Text('הודועות',
+                      style: TextStyle(
+                        //color: Colors.black,
+                        fontFamily: 'Assistant',
+                      )):Text('יצירת קשר',
                       style: TextStyle(
                         //color: Colors.black,
                         fontFamily: 'Assistant',
@@ -231,7 +235,7 @@ class _BottomNavigationBarControllerState
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Icon(Icons.message), // icon
-                    Text("דווח"), // text
+                    Text("תיעוד"), // text
                   ],
                 ),
               ),
@@ -270,7 +274,7 @@ class _DialogExampleState extends State<DialogExample> {
           new RaisedButton(
             onPressed: () {
               showDialog(
-                  child: new Dialog(
+                  builder: (_) =>  new Dialog(
                     child: new Column(
                       children: <Widget>[
                         new TextField(
@@ -278,8 +282,8 @@ class _DialogExampleState extends State<DialogExample> {
                               new InputDecoration(hintText: "עדכן מידע"),
                           controller: _c,
                         ),
-                        new FlatButton(
-                          child: new Text("שמור"),
+                        new TextButton(
+                          child: new Text("שימרו"),
                           onPressed: () {
                             setState(() {
                               this._text = _c.text;

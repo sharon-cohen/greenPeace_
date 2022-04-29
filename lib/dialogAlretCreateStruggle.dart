@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 missMainImage(BuildContext context) {
 
   // set up the button
-  Widget okButton = FlatButton(
-    child: Text("חזור"),
+  Widget okButton = TextButton(
+    child: Text("חזרו"),
     onPressed: () => Navigator.of(context).pop(null),
   );
 
@@ -28,8 +28,8 @@ missMainImage(BuildContext context) {
 NameStruggleExist(BuildContext context) {
 
   // set up the button
-  Widget okButton = FlatButton(
-    child: Text("חזור"),
+  Widget okButton = TextButton(
+    child: Text("חזרו"),
     onPressed: () => Navigator.of(context).pop(null),
   );
 

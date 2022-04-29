@@ -46,13 +46,13 @@ class _button_sendState extends State<button_send> {
 
   image_sent_pro(BuildContext context, String image_show) {
     // set up the buttons
-    Widget cancelButton = FlatButton(
+    Widget cancelButton = TextButton(
       child: Text("בטל"),
       onPressed: () {
         Navigator.pop(context, true);
       },
     );
-    Widget continueButton = FlatButton(
+    Widget continueButton = TextButton(
         child: Text("אישור"),
         onPressed: () {
           fileUrl = image_show;
@@ -121,7 +121,7 @@ class _button_sendState extends State<button_send> {
       mass.add(
         Expanded(
           flex: 1,
-          child: FlatButton(
+          child: TextButton(
             onPressed: () async {
               messageTextContoller.clear();
               if (messageText != "") {
@@ -138,16 +138,12 @@ class _button_sendState extends State<button_send> {
                 });
               }
             },
+
             child: Container(
-              child: Text(
-                'שלח',
-                //style: kSendButtonTextStyle,
-                style: TextStyle(
-                  color: Color(int.parse("0xff6ed000")),
-                  fontFamily: 'Assistant',
-                  fontSize: 15,
-                ),
-              ),
+         child: Icon(
+          Icons.send,
+           color: Color(int.parse("0xff6ed000")),
+         ),
             ),
           ),
         ),

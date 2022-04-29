@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:greenpeace/register.dart';
 import 'package:greenpeace/globalfunc.dart';
-
+import 'package:greenpeace/GetID_DB/getid.dart';
+import 'package:greenpeace/global.dart' as globals;
 class DialogUtils {
   static DialogUtils _instance = new DialogUtils.internal();
 
@@ -29,60 +30,109 @@ class DialogUtils {
     Future doesNameAlreadyExist(String text_or_image, bool is_image) async {
       final _firestore = Firestore.instance;
       if (is_image == true) {
-        final QuerySnapshot result = await Firestore.instance
-            .collection('messages')
-            .where('url', isEqualTo: text_or_image)
-            .limit(1)
-            .getDocuments();
-        final List<DocumentSnapshot> documents = result.documents;
-        await Firestore.instance
-            .collection('messages')
-            .document(documents[0].documentID)
-            .get()
-            .then((DocumentSnapshot documentSnapshot) {
-          if (documentSnapshot.exists) {
-            final image = documentSnapshot.data['url'];
-            print(image.toString());
-            final text = documentSnapshot.data['text'];
+        if (globals.isMeneger){
+          String idevent =
+          await Getmess(
+              text_or_image,
+              true);
+          await _firestore
+              .collection(
+              "messages")
+              .document(
+              idevent)
+              .delete();
+          String idreport =
+          await Getreport(
+              text_or_image,
+              true);
+          await _firestore
+              .collection(
+              "report")
+              .document(
+              idreport)
+              .delete();
 
-            final sender = documentSnapshot.data['sender'].toString();
-            print(sender.toString());
-            final time = documentSnapshot.data['time'];
-            _firestore.collection('report').add({
-              "text": text,
-              "sender": sender,
-              "time": time,
-              "url": image,
-            });
-          }
-        });
+        }else{
+          final QuerySnapshot result = await Firestore.instance
+              .collection('messages')
+              .where('url', isEqualTo: text_or_image)
+              .limit(1)
+              .getDocuments();
+          final List<DocumentSnapshot> documents = result.documents;
+          await Firestore.instance
+              .collection('messages')
+              .document(documents[0].documentID)
+              .get()
+              .then((DocumentSnapshot documentSnapshot) {
+            if (documentSnapshot.exists) {
+              final image = documentSnapshot.data['url'];
+              print(image.toString());
+              final text = documentSnapshot.data['text'];
+
+              final sender = documentSnapshot.data['sender'].toString();
+              print(sender.toString());
+              final time = documentSnapshot.data['time'];
+              _firestore.collection('report').add({
+                "text": text,
+                "sender": sender,
+                "time": time,
+                "url": image,
+              });
+            }
+          });
+
+        }
 
         Navigator.pop(context);
       } else {
-        final QuerySnapshot result = await Firestore.instance
-            .collection('messages')
-            .where('text', isEqualTo: text_or_image)
-            .limit(1)
-            .getDocuments();
-        final List<DocumentSnapshot> documents = result.documents;
-        await Firestore.instance
-            .collection('messages')
-            .document(documents[0].documentID)
-            .get()
-            .then((DocumentSnapshot documentSnapshot) {
-          if (documentSnapshot.exists) {
-            final image = documentSnapshot.data['url'];
-            final text = documentSnapshot.data['text'];
-            final sender = documentSnapshot.data['sender'].toString();
-            final time = documentSnapshot.data['time'];
-            _firestore.collection('report').add({
-              "text": text,
-              "sender": sender,
-              "time": time,
-              "url": image,
-            });
-          }
-        });
+        if (globals.isMeneger){
+          String idevent =await Getmess(
+              text_or_image,
+              false);
+          await _firestore
+              .collection(
+              "messages")
+              .document(
+              idevent)
+              .delete();
+          String idreport =
+          await Getreport(
+              text_or_image,
+              false);
+          await _firestore
+              .collection(
+              "report")
+              .document(
+              idreport)
+              .delete();
+        }else{
+          final QuerySnapshot result = await Firestore.instance
+              .collection('messages')
+              .where('text', isEqualTo: text_or_image)
+              .limit(1)
+              .getDocuments();
+          final List<DocumentSnapshot> documents = result.documents;
+          await Firestore.instance
+              .collection('messages')
+              .document(documents[0].documentID)
+              .get()
+              .then((DocumentSnapshot documentSnapshot) {
+            if (documentSnapshot.exists) {
+              final image = documentSnapshot.data['url'];
+              final text = documentSnapshot.data['text'];
+              final sender = documentSnapshot.data['sender'].toString();
+              final time = documentSnapshot.data['time'];
+              _firestore.collection('report').add({
+                "text": text,
+                "sender": sender,
+                "time": time,
+                "url": image,
+              });
+            }
+          });
+
+        }
+
         Navigator.pop(context);
       }
     }
@@ -109,7 +159,7 @@ class DialogUtils {
               width: 60,
             ),
             actions: <Widget>[
-              FlatButton(
+              TextButton(
                 child: Text(
                   okBtnText,
                   style: TextStyle(
@@ -117,7 +167,7 @@ class DialogUtils {
                       fontFamily: 'Assistant',
                       fontWeight: FontWeight.bold),
                 ),
-                color: Colors.white,
+                // color: Colors.white,
                 onPressed: () {
                   print(text);
                   if (text == "") {
@@ -127,7 +177,7 @@ class DialogUtils {
                   }
                 },
               ),
-              FlatButton(
+              TextButton(
                   child: Text(
                     cancelBtnText,
                     style: TextStyle(
@@ -144,7 +194,7 @@ class DialogUtils {
 
 GoregisterAlertDialog(BuildContext context) {
   // set up the button
-  Widget okButton = FlatButton(
+  Widget okButton = TextButton(
     child: Text(
       "לכו להירשם",
       style: new TextStyle(
@@ -157,7 +207,7 @@ GoregisterAlertDialog(BuildContext context) {
           MaterialPageRoute(builder: (context) => RegistrationScreen()));
     },
   );
-  Widget Later = FlatButton(
+  Widget Later = TextButton(
     child: Text(
       "אחר כך",
       style: new TextStyle(

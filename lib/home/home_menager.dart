@@ -177,7 +177,7 @@ class Home_menagerState extends State<Home_menager> {
                         child: Container(
                           alignment: Alignment.bottomRight,
                           child: Text(
-                            'הצטרפו ותתמכו בפעילות שלנו',
+                            'מכאן מתחילים לשנות את העולם \n איזה תחום מעניין אותך?',
                             style: TextStyle(
                               fontFamily: 'Assistant',
                             ),
@@ -192,7 +192,7 @@ class Home_menagerState extends State<Home_menager> {
                       ),
                       Expanded(
                         flex: 2,
-                        child: FlatButton(
+                        child: TextButton(
                           child: Text(
                             "לכל המאבקים",
                             style: TextStyle(
@@ -252,7 +252,7 @@ class Home_menagerState extends State<Home_menager> {
                       Container(
                         height: MediaQuery.of(context).size.height / 25,
                         child: Text(
-                          'כאן ניתן לשתף את האהבה והדאגה שלנו לסביבה',
+                          'מתכתבים ומתעדכנים עם מתנדבי גרינפיס מכל הארץ',
                           style: TextStyle(
                             fontFamily: 'Assistant',
                           ),
@@ -266,7 +266,7 @@ class Home_menagerState extends State<Home_menager> {
                           no_reg: no_reg,
                         ):null,
                       ),
-                      FlatButton(
+                      TextButton(
                         child: Text(
                           "לכל העדכונים",
                           style: TextStyle(
@@ -324,7 +324,7 @@ class Home_menagerState extends State<Home_menager> {
                         ],
                       ),
                       Text(
-                        'צפו באירועים הקרובים וצרו אירוע משלכם',
+                        'צפו באירועים הקרובים וצרו אירוע סביבתי משלכם',
                         style: TextStyle(
                           fontFamily: 'Assistant',
                         ),
@@ -446,7 +446,7 @@ class Home_menagerState extends State<Home_menager> {
                               );
                             }),
                       ),
-                      FlatButton(
+                      TextButton(
                         child: Text(
                           "לכל האירועים",
                           style: TextStyle(
@@ -501,7 +501,7 @@ class Home_menagerState extends State<Home_menager> {
                                   onPressed: () async {
                                     aboutController.text = await GetAbout();
                                     showDialog(
-                                        child: new Dialog(
+                                        builder: (_) => new Dialog(
                                           child: Container(
                                             height: MediaQuery.of(context)
                                                     .size
@@ -533,8 +533,8 @@ class Home_menagerState extends State<Home_menager> {
                                                       CrossAxisAlignment.end,
                                                   children: [
                                                     Spacer(),
-                                                    new FlatButton(
-                                                      child: new Text("שמור"),
+                                                    new TextButton(
+                                                      child: new Text("שימרו"),
                                                       onPressed: () async {
                                                         await Firestore.instance
                                                             .collection('about')
@@ -549,7 +549,7 @@ class Home_menagerState extends State<Home_menager> {
                                                       },
                                                     ),
                                                     Spacer(),
-                                                    new FlatButton(
+                                                    new TextButton(
                                                       child: new Text("בטל"),
                                                       onPressed: () {
                                                         Navigator.pop(
@@ -641,8 +641,8 @@ class Home_menagerState extends State<Home_menager> {
                               ),
                               controller: _c,
                             ),
-                            new FlatButton(
-                              child: new Text("שמור",
+                            new TextButton(
+                              child: new Text("שימורו",
                                   style: TextStyle(
                                     fontFamily: 'Assistant',
                                     color: Color(int.parse("0xff6ed000")),
@@ -737,8 +737,8 @@ class Home_menagerState extends State<Home_menager> {
                               ),
                               controller: userBan,
                             ),
-                            new FlatButton(
-                              child: new Text("שמור",
+                            new TextButton(
+                              child: new Text("שמירה",
                                   style: TextStyle(
                                     fontFamily: 'Assistant',
                                     color: Color(int.parse("0xff6ed000")),
@@ -790,7 +790,7 @@ class Home_menagerState extends State<Home_menager> {
                     ),
                   )
                 : Container(),
-            FlatButton(
+            TextButton(
               onPressed: () async {
                 if (FirebaseAuth.instance.currentUser() != null) {
                   await FirebaseAuth.instance.signOut();
@@ -816,8 +816,8 @@ class Home_menagerState extends State<Home_menager> {
 
 showAlertDialogManegActive(BuildContext context, mess) {
   // set up the button
-  Widget okButton = FlatButton(
-    child: Text("חזור"),
+  Widget okButton = TextButton(
+    child: Text("חזרו"),
     onPressed: () {
       Navigator.pop(context, true);
     },

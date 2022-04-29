@@ -249,29 +249,31 @@ class _mass_eventState extends State<mass_event> {
                       alignment: FractionalOffset.topRight,
                     ),
                     new Align(
-                      child: FlatButton(
-                        color: Colors.white,
-                        textColor: Color(int.parse("0xff6ed000")),
-                        disabledColor: Colors.grey,
-                        disabledTextColor: Colors.black,
-                        padding: EdgeInsets.all(0.0),
-                        splashColor: Colors.blueAccent,
+                      child: TextButton(
+                        // color: Colors.white,
+                        // textColor: Color(int.parse("0xff6ed000")),
+                        // disabledColor: Colors.grey,
+                        // disabledTextColor: Colors.black,
+                        // padding: EdgeInsets.all(0.0),
+                        // splashColor: Colors.blueAccent,
                         onPressed: () {
                           launchMap(widget.event.location);
                         },
                         child: Row(
-                          children: [
-                            Image.asset(
+                          children: <Widget>[
+                            Expanded( child: Image.asset(
                               'image/google-maps.png',
                               width: 30,
                               height: 30,
-                            ),
-                            SizedBox(width: 7),
-                            Text(
+                            )),
+
+                            // SizedBox(width: 7),
+                            Expanded(flex: 4,child: Text(
                               widget.event.location,
                               style: TextStyle(
                                   fontSize: 20.0, fontFamily: 'Assistant'),
-                            ),
+                            ))
+
                           ],
                         ),
                       ), //so big text
@@ -306,7 +308,7 @@ class _mass_eventState extends State<mass_event> {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                FlatButton(
+                                TextButton(
                                   child: Column(
                                     children: [
                                       Image.asset(
@@ -315,7 +317,7 @@ class _mass_eventState extends State<mass_event> {
                                         width: 30,
                                         height: 30,
                                       ),
-                                      Text('השב ',
+                                      Text('השיבו ',
                                           style: TextStyle(
                                             fontSize: 15,
                                             color: Colors.white,
@@ -347,7 +349,7 @@ class _mass_eventState extends State<mass_event> {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                FlatButton(
+                                TextButton(
                                   child: Column(
                                     children: [
                                       Image.asset(
@@ -356,7 +358,7 @@ class _mass_eventState extends State<mass_event> {
                                         width: 30,
                                         height: 30,
                                       ),
-                                      Text('מחק',
+                                      Text('מחקו',
                                           style: TextStyle(
                                             fontFamily: 'Assistant',
                                             fontSize: 15,
@@ -366,7 +368,7 @@ class _mass_eventState extends State<mass_event> {
                                   ),
                                   onPressed: () async {
                                     showDialog(
-                                        child: new Dialog(
+                                    builder: (_) => new Dialog(
                                           child: Container(
                                             width: 100,
                                             height: 100,
@@ -396,8 +398,8 @@ class _mass_eventState extends State<mass_event> {
                                                 Row(
                                                   children: [
                                                     Spacer(),
-                                                    new FlatButton(
-                                                      child: new Text("מחק",
+                                                    new TextButton(
+                                                      child: new Text("מחקו",
                                                           style: TextStyle(
                                                             fontFamily: 'Assistant',
                                                             fontSize: 20,
@@ -429,17 +431,18 @@ class _mass_eventState extends State<mass_event> {
                                                         Navigator.pop(context);
                                                       },
                                                     ),
-                                                    new FlatButton(
+                                                    new TextButton(
+                                                      onPressed: () {
+                                                        Navigator.pop(
+                                                            context, true);
+                                                      },
                                                       child: new Text("בטל",
                                                           style: TextStyle(
                                                             fontFamily: 'Assistant',
                                                             fontSize: 20,
                                                             color: Colors.black,
-                                                          )),
-                                                      onPressed: () {
-                                                        Navigator.pop(
-                                                            context, true);
-                                                      },
+                                                          ),
+                                                    ),
                                                     ),
                                                   ],
                                                 )
@@ -468,7 +471,7 @@ class _mass_eventState extends State<mass_event> {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                FlatButton(
+                                TextButton(
                                   child: Column(
                                     children: [
                                       Icon(Icons.edit, color: Colors.white),
@@ -558,7 +561,7 @@ successshowAlertDialog(BuildContext context, String email, String currentuserId,
     String name_event, String createby) {
   FirebaseUser currentUser;
   // set up the button
-  Widget okButton = FlatButton(
+  Widget okButton = TextButton(
     child: Text("אישור",
         style: new TextStyle(
           fontFamily: 'Assistant',

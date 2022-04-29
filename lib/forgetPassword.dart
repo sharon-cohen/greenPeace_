@@ -54,11 +54,11 @@ class _ForgetPassword extends State<ForgetPassword> {
                       },
                     )),
                 Center(
-                    child: FlatButton(
-                  color: Color(int.parse("0xff6ed000")),
-                  textColor: Colors.white,
-                  padding: EdgeInsets.all(8.0),
-                  splashColor: Color(int.parse("0xff6ed000")),
+                    child: TextButton(
+                  // color: Color(int.parse("0xff6ed000")),
+                  // textColor: Colors.white,
+                  // padding: EdgeInsets.all(8.0),
+                  // splashColor: Color(int.parse("0xff6ed000")),
                   onPressed: () async {
 
                     resetPassword(UserName);
@@ -78,7 +78,7 @@ class _ForgetPassword extends State<ForgetPassword> {
 
 showAlertDialogForgetPassword(BuildContext context) {
   // set up the button
-  Widget okButton = FlatButton(
+  Widget okButton = TextButton(
     child: Text("אישור",
         style: new TextStyle(
           fontFamily: 'Assistant',

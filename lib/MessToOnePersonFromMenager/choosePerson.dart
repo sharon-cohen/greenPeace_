@@ -95,7 +95,7 @@ class _userStream extends State<userStream> {
                       ),
                       Spacer(),
                       Text(
-                        'בחר משתמש         ',
+                        'בחרו משתמש         ',
                         style: TextStyle(
                             fontFamily: 'Assistant',
                             color: Colors.black,

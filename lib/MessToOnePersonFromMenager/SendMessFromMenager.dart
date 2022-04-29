@@ -36,13 +36,13 @@ class _SendOneUser extends State<SendOneUser> {
   }
   image_sent_pro(BuildContext context, String image_show) {
     // set up the buttons
-    Widget cancelButton = FlatButton(
+    Widget cancelButton = TextButton(
       child: Text("בטל"),
       onPressed: () {
         Navigator.pop(context, true);
       },
     );
-    Widget continueButton = FlatButton(
+    Widget continueButton = TextButton(
         child: Text("אישור"),
         onPressed: () {
           fileUrl = image_show;
@@ -324,7 +324,7 @@ class _SendOneUser extends State<SendOneUser> {
 
 showAlertDialog_mess_send(BuildContext context) {
   // set up the button
-  Widget okButton = FlatButton(
+  Widget okButton = TextButton(
     child: Text("OK"),
     onPressed: () {
       Navigator.push(

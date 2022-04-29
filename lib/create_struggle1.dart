@@ -279,8 +279,7 @@ class create_struggle1State extends State<create_struggle1> {
                           padding: const EdgeInsets.fromLTRB(16, 40, 16, 0),
                           child: Container(
 
-                            child: FlatButton(
-                              padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                            child: TextButton(
                               child: Row(
                                 children: [
                                   Image.asset(
@@ -290,7 +289,7 @@ class create_struggle1State extends State<create_struggle1> {
                                   ),
                                   SizedBox(width: 7),
                                   Text(
-                                    "בחר בתמונה ראשית למאבק",
+                                    "בחרו בתמונה ראשית למאבק",
                                     style: new TextStyle(
                                         fontSize: 25, fontFamily: 'Assistant'),
                                   ),
@@ -418,7 +417,7 @@ class create_struggle1State extends State<create_struggle1> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "הוסף פסקאות",
+                        "הוסיפו פסקאות",
                         style: style.copyWith(
                             color: Colors.white,
                             fontWeight: FontWeight.bold),
@@ -463,7 +462,7 @@ class Data {
 
 showAlertDialogStruggle(BuildContext context, String Mess) {
   // set up the button
-  Widget okButton = FlatButton(
+  Widget okButton = TextButton(
     child: Text(
       "אישור",
       style: TextStyle(color: Colors.black, fontFamily: 'Assistant'),

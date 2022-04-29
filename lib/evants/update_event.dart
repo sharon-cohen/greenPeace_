@@ -184,7 +184,7 @@ class _updateEventPage extends State<updateEventPage> {
                 padding: EdgeInsets.fromLTRB(
                     5, MediaQuery.of(context).size.height / 15, 5, 0),
                 child: Align(
-                  child: FlatButton(
+                  child: TextButton(
                     child: Row(
                       children: [
                         Image.asset(
@@ -289,7 +289,7 @@ class _updateEventPage extends State<updateEventPage> {
               ),
               ListTile(
                 title: Text(
-                  "בחר תאריך",
+                  "בחרו תאריך",
                   style: new TextStyle(
                     fontSize: 25,
                     fontFamily: 'Assistant',
@@ -391,7 +391,7 @@ class _updateEventPage extends State<updateEventPage> {
                             //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(
-                                'שמור שינויים',
+                                'שמירת שינויים',
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold,
@@ -468,7 +468,7 @@ class Data {
 
 successshowAlertDialog(BuildContext context,bool ifCreateEventIsMenager,String cameFrom) {
 
-  Widget okButton = FlatButton(
+  Widget okButton = TextButton(
     child: Text("אישור"),
     onPressed: () async{
       Navigator.pop(context, true);

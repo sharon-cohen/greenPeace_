@@ -15,7 +15,7 @@ const kSendButtonTextStyle = TextStyle(
 
 var kMessageTextFieldDecoration = InputDecoration(
   contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-  hintText: 'הקלד הודעה',
+  hintText: 'הקלדֿ/י הודעה',
   border: OutlineInputBorder(
     borderSide: BorderSide(color: Colors.green),
     borderRadius: BorderRadius.circular(10),
@@ -29,7 +29,7 @@ const kMessageContainerDecoration = BoxDecoration(
 );
 
 const kTextFieldDecoration = InputDecoration(
-  hintText: 'הקלד הודעה',
+  hintText: 'הקלדֿ/י הודעה',
   contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
   border: OutlineInputBorder(
     borderRadius: BorderRadius.all(Radius.circular(32.0)),

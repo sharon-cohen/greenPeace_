@@ -125,8 +125,8 @@ class MyFormState extends State<MyForm> {
                         ),
                       ),
                     ),
-                    new FlatButton(
-                      padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                    new TextButton(
+
                       child: Row(
                         children: [
                           Image.asset(
@@ -135,7 +135,7 @@ class MyFormState extends State<MyForm> {
                             height: 30,
                           ),
                           Text(
-                            "בחר בתמונה",
+                            "בחרו בתמונה",
                             style: new TextStyle(fontSize: 25, fontFamily: 'Assistant'),
                           ),
                         ],
@@ -152,7 +152,7 @@ class MyFormState extends State<MyForm> {
                     file1.path!=" "? new Row(
                       children: [
                         Expanded(
-                          child: FlatButton(
+                          child: TextButton(
                               onPressed: () {
                                 setState(() {
                                   file1=new File(" ");
@@ -184,8 +184,8 @@ class MyFormState extends State<MyForm> {
                         ),
                       ),
                     ),
-                    new FlatButton(
-                      padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                    new TextButton(
+
                       child: Row(
                         children: [
                           Image.asset(
@@ -194,7 +194,7 @@ class MyFormState extends State<MyForm> {
                             height: 30,
                           ),
                           Text(
-                            "בחר בתמונה",
+                            "בחרו בתמונה",
                             style: new TextStyle(fontSize: 25, fontFamily: 'Assistant'),
                           ),
                         ],
@@ -211,7 +211,7 @@ class MyFormState extends State<MyForm> {
                     file2.path!=" "?new Row(
                       children: [
                         Expanded(
-                          child: FlatButton(
+                          child: TextButton(
                               onPressed: () {
                                 setState(() {
                                   file2=new File(" ");
@@ -243,8 +243,8 @@ class MyFormState extends State<MyForm> {
                         ),
                       ),
                     ),
-                    new FlatButton(
-                      padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                    new TextButton(
+
                       child: Row(
                         children: [
                           Image.asset(
@@ -253,7 +253,7 @@ class MyFormState extends State<MyForm> {
                             height: 30,
                           ),
                           Text(
-                            "בחר בתמונה",
+                            "בחרו בתמונה",
                             style: new TextStyle(fontSize: 25, fontFamily: 'Assistant'),
                           ),
                         ],
@@ -270,7 +270,7 @@ class MyFormState extends State<MyForm> {
                     file3.path!=" "?new Row(
                       children: [
                         Expanded(
-                          child: FlatButton(
+                          child: TextButton(
                               onPressed: () {
                                 setState(() {
                                   file3=new File(" ");
@@ -302,8 +302,7 @@ class MyFormState extends State<MyForm> {
                         ),
                       ),
                     ),
-                    new FlatButton(
-                      padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                    new TextButton(
                       child: Row(
                         children: [
                           Image.asset(
@@ -312,7 +311,7 @@ class MyFormState extends State<MyForm> {
                             height: 30,
                           ),
                           Text(
-                            "בחר בתמונה",
+                            "בחרו בתמונה",
                             style: new TextStyle(fontSize: 25, fontFamily: 'Assistant'),
                           ),
                         ],
@@ -329,7 +328,7 @@ class MyFormState extends State<MyForm> {
                     file4.path!=" "?new Row(
                       children: [
                         Expanded(
-                          child: FlatButton(
+                          child: TextButton(
                               onPressed: () {
                                 setState(() {
                                   file4=new File(" ");
@@ -361,8 +360,7 @@ class MyFormState extends State<MyForm> {
                         ),
                       ),
                     ),
-                    new FlatButton(
-                      padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                    new TextButton(
                       child: Row(
                         children: [
                           Image.asset(
@@ -371,7 +369,7 @@ class MyFormState extends State<MyForm> {
                             height: 30,
                           ),
                           Text(
-                            "בחר בתמונה",
+                            "בחרו בתמונה",
                             style: new TextStyle(fontSize: 25, fontFamily: 'Assistant'),
                           ),
                         ],
@@ -388,7 +386,7 @@ class MyFormState extends State<MyForm> {
                     file5.path!=" "?new Row(
                       children: [
                         Expanded(
-                          child: FlatButton(
+                          child: TextButton(
                               onPressed: () {
                                 setState(() {
                                   file5=new File(" ");
@@ -471,7 +469,7 @@ class MyFormState extends State<MyForm> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "צור מאבק",
+                        "יצירת מאבק",
                         style: TextStyle(
                           color:Colors.white,
                         ),

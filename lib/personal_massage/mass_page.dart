@@ -171,7 +171,7 @@ class _massState extends State<mass> {
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  FlatButton(
+                                  TextButton(
                                     child: Column(
                                       children: [
                                         Image.asset(
@@ -180,7 +180,7 @@ class _massState extends State<mass> {
                                           width: 30,
                                           height: 30,
                                         ),
-                                        Text('השב ',
+                                        Text('השיבו ',
                                             style: TextStyle(
                                               fontSize: 20,
                                               color: Colors.white,
@@ -212,7 +212,7 @@ class _massState extends State<mass> {
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  FlatButton(
+                                  TextButton(
                                     child: Column(
                                       children: [
                                         Image.asset(
@@ -221,7 +221,7 @@ class _massState extends State<mass> {
                                           width: 30,
                                           height: 30,
                                         ),
-                                        Text('מחק',
+                                        Text('מחקו',
                                             style: TextStyle(
                                               fontFamily: 'Assistant',
                                               fontSize: 20,
@@ -231,7 +231,7 @@ class _massState extends State<mass> {
                                     ),
                                     onPressed: () async {
                                       await showDialog(
-                                          child: new Dialog(
+                                          builder: (_) =>  new Dialog(
                                             child: Container(
                                               width: 100,
                                               height: 100,
@@ -267,8 +267,8 @@ class _massState extends State<mass> {
                                                   Row(
                                                     children: [
                                                       Spacer(),
-                                                      new FlatButton(
-                                                        child: new Text("מחק",
+                                                      new TextButton(
+                                                        child: new Text("מחקו",
                                                             style: TextStyle(
                                                               fontFamily:
                                                                   'Assistant',
@@ -339,7 +339,7 @@ class _massState extends State<mass> {
                                                           }
                                                         },
                                                       ),
-                                                      new FlatButton(
+                                                      new TextButton(
                                                         child: new Text("בטל",
                                                             style: TextStyle(
                                                               fontFamily:

@@ -127,8 +127,8 @@ class _editImageDesState extends State<editImageDes> {
                 ),
               ),
             ),
-            new FlatButton(
-              padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+            new TextButton(
+
               child: Row(
                 children: [
                   Image.asset(
@@ -137,7 +137,7 @@ class _editImageDesState extends State<editImageDes> {
                     height: 30,
                   ),
                   Text(
-                    "בחר בתמונה",
+                    "בחרו בתמונה",
                     style: new TextStyle(fontSize: 25, fontFamily: 'Assistant'),
                   ),
                 ],
@@ -153,7 +153,7 @@ class _editImageDesState extends State<editImageDes> {
             file1 != " " ? new Row(
               children: [
                 Expanded(
-                  child: FlatButton(
+                  child: TextButton(
                       onPressed: () {
                         setState(() {
                           file1 = " ";
@@ -185,8 +185,7 @@ class _editImageDesState extends State<editImageDes> {
                 ),
               ),
             ),
-            new FlatButton(
-              padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+            new TextButton(
               child: Row(
                 children: [
                   Image.asset(
@@ -195,7 +194,7 @@ class _editImageDesState extends State<editImageDes> {
                     height: 30,
                   ),
                   Text(
-                    "בחר בתמונה",
+                    "בחרו בתמונה",
                     style: new TextStyle(fontSize: 25, fontFamily: 'Assistant'),
                   ),
                 ],
@@ -212,7 +211,7 @@ class _editImageDesState extends State<editImageDes> {
             file2 != " " ? new Row(
               children: [
                 Expanded(
-                  child: FlatButton(
+                  child: TextButton(
                       onPressed: () {
                         setState(() {
                           file2 = " ";
@@ -244,8 +243,7 @@ class _editImageDesState extends State<editImageDes> {
                 ),
               ),
             ),
-            new FlatButton(
-              padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+            new TextButton(
               child: Row(
                 children: [
                   Image.asset(
@@ -271,7 +269,7 @@ class _editImageDesState extends State<editImageDes> {
             file3 != " " ? new Row(
               children: [
                 Expanded(
-                  child: FlatButton(
+                  child: TextButton(
                       onPressed: () {
                         setState(() {
                           file3 = " ";
@@ -303,8 +301,8 @@ class _editImageDesState extends State<editImageDes> {
                 ),
               ),
             ),
-            new FlatButton(
-              padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+            new TextButton(
+
               child: Row(
                 children: [
                   Image.asset(
@@ -331,7 +329,7 @@ class _editImageDesState extends State<editImageDes> {
             file4 != " " ? new Row(
               children: [
                 Expanded(
-                  child: FlatButton(
+                  child: TextButton(
                       onPressed: () {
                         setState(() {
                           file4 = " ";
@@ -363,8 +361,7 @@ class _editImageDesState extends State<editImageDes> {
                 ),
               ),
             ),
-            new FlatButton(
-              padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+            new TextButton(
               child: Row(
                 children: [
                   Image.asset(
@@ -390,7 +387,7 @@ class _editImageDesState extends State<editImageDes> {
             file5 != " " ? new Row(
               children: [
                 Expanded(
-                  child: FlatButton(
+                  child: TextButton(
                       onPressed: () {
                         setState(() {
                           file5 = " ";

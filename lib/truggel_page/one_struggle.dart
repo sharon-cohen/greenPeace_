@@ -436,8 +436,8 @@ ToBeSureDeleteAlertDialog(BuildContext context, String nameStruggle) {
         .updateData({'sum': sumStruggle - 1});
   }
 
-  Widget okButton = FlatButton(
-    child: Text("מחק"),
+  Widget okButton = TextButton(
+    child: Text("מחקו"),
     onPressed: () async {
       isLoading = true;
       String idstruggle = await GetStrugle(nameStruggle);
@@ -447,7 +447,7 @@ ToBeSureDeleteAlertDialog(BuildContext context, String nameStruggle) {
       Navigator.pushNamed(context, BottomNavigationBarController.id);
     },
   );
-  Widget Later = FlatButton(
+  Widget Later = TextButton(
     child: Text("בטל"),
     onPressed: () {
       Navigator.pop(context);
@@ -523,8 +523,8 @@ class _MyDialogState extends State<MyDialog> {
     return AlertDialog(
       title: FittedBox(child: Text("האם ברצונך למחוק את המאבק?")),
       actions: <Widget>[
-        FlatButton(
-          child: Text("מחק"),
+        TextButton(
+          child: Text("מחקו"),
           onPressed: () async {
             setState(() {
               isLoading = true;
@@ -544,7 +544,7 @@ class _MyDialogState extends State<MyDialog> {
             Navigator.pushNamed(context, BottomNavigationBarController.id);
           },
         ),
-        FlatButton(
+        TextButton(
           child: Text("בטל"),
           onPressed: () {
             Navigator.pop(context);
